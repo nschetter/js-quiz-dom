@@ -1,0 +1,18 @@
+* {
+  background:black;
+}
+
+#title {
+  font-size: 67pt;
+  font-family: Verdana, sans-serif;
+  text-align:center;
+  color:#660000;
+}
+
+#throne {
+  width: 650px;
+  height: 400px;
+  margin-left:auto;
+  margin-right:auto;
+  display: block;
+}
