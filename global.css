@@ -22,6 +22,7 @@
 #quiz {
   color:red;
   text-align:center;
+  font: Verdana, sans-serif;
 }
 
 button {
@@ -36,4 +37,18 @@ button {
 
 input {
   background-color:white;
+}
+
+#next {
+  position:relative;
+  right: 24px;
+}
+
+#questions {
+  font-weight:bolder;
+  font-size: 20pt;
+}
+
+#options{
+  padding-bottom: 20px;
 }

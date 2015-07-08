@@ -52,6 +52,7 @@ function update_question_result(correct){
 function process_answer_submission(){
   var user_answer = input_answer();
   update_question_result(is_correct_answer(user_answer));
+  document.getElementById("submitter").style.visibility = "hidden";
 };
 
 function next_question(){
@@ -61,6 +62,7 @@ function next_question(){
     document.getElementById("options").innerText = qarray[i].options;
     document.getElementById("answer").value = "";
     document.getElementById("question_result").innerText = "";
+     document.getElementById("submitter").style.visibility="visible";
   } else {
     percent = ((score/numberOfQuestions) * 100);
     document.getElementById("result").innerText = "Your score was: " + percent + "%, and you need a 70% to pass";
