@@ -20,6 +20,7 @@ var q10 = {q:"The common expression in High Valyrian 'Valar Morghulis' translate
 // answers -- q10 = 4
 
 var qarray = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
+var numberOfQuestions = parseInt(qarray.length);
 var a, i = 0;
 var score = 0;
 
@@ -28,40 +29,49 @@ document.getElementById("options").innerText = qarray[i].options;
 document.getElementById("submitter").onclick = process_answer_submission;  
 document.getElementById("next").onclick = next_question;
 
-function user_answer(){
+function input_answer(){
   return document.getElementById("answer").value;
-}
+};
 
 function is_correct_answer(answer_text){
   if (answer_text == qarray[i].a) {
     return true;
   } 
-  return false;
-}
+    return false;
+};
 
 function update_question_result(correct){
   if (correct) {
-    score++;
-    document.getElementById("question_result").innerText = "Correct";
+    score += 1;
+    document.getElementById("question_result").innerText = "That's Right!";
   } else {
-    document.getElementById("question_result").innerText = "Incorrect";
+    document.getElementById("question_result").innerText = "Sorry -- that's wrong.";
   }
-}
+};
 
 function process_answer_submission(){
-  var user_answer = given_answer();
+  var user_answer = input_answer();
   update_question_result(is_correct_answer(user_answer));
-}
+};
 
 function next_question(){
   i += 1
-  if (count < 5 ) {
-    document.getElementById("questions").innerText = qarray[i].question; 
-    document.getElementById("choices").innerText = question_array[count].choices;
-    document.getElementById("answer").value = null;
+  if (i < numberOfQuestions) {
+    document.getElementById("questions").innerText = qarray[i].q; 
+    document.getElementById("options").innerText = qarray[i].options;
+    document.getElementById("answer").value = "";
     document.getElementById("question_result").innerText = "";
   } else {
-    percentage = ((score/5.0) * 100);
-    document.getElementById("total_result").innerText = "All done. Your score was: " + percentage + "%.";
+    percent = ((score/numberOfQuestions) * 100);
+    document.getElementById("result").innerText = "Your score was: " + percent + "%, and you need a 70% to pass";
+    pass();
+  }
+};
+
+function pass(){
+  if (percent >= 70) {
+    document.getElementById("passfail").innerText = "You know a good amount about 'Game of Thrones'; you passed!";
+  } else {
+    document.getElementById("passfail").innerText = "You know nothing Jon Snow; you failed";
   }
 }

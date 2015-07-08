@@ -7,6 +7,7 @@
   font-family: Verdana, sans-serif;
   text-align:center;
   color:#660000;
+  margin-top:20px;
 }
 
 #throne {
@@ -15,4 +16,24 @@
   margin-left:auto;
   margin-right:auto;
   display: block;
+  padding-bottom:25px;
+}
+
+#quiz {
+  color:red;
+  text-align:center;
+}
+
+button {
+  background-color: #330000; 
+  padding: 2px 4px;
+  font: 13px sans-serif;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-color: #660000;
+  color: red
+}
+
+input {
+  background-color:white;
 }
